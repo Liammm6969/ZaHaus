@@ -1,0 +1,399 @@
+.landing-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  position: relative;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto 4rem auto;
+  padding: 0 2rem;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo-circle {
+  width: 32px;
+  height: 32px;
+  background: #f9a825;
+  border-radius: 50%;
+}
+.logo-text {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-link.active,
+.nav-link:hover {
+  color: #f9a825;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.icon-btn,
+.cart-btn {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.icon-btn:hover {
+  background: rgba(0,0,0,0.05);
+}
+.cart-btn {
+  background: #f9a825;
+  color: #fff;
+  position: relative;
+}
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #000;
+  color: #fff;
+  font-size: 0.75rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content-ref {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 6.5rem;
+  min-height: 70vh;
+  position: relative;
+}
+.left-col {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding-left: 2rem;
+}
+.right-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 0;
+  position: relative;
+}
+
+.pizza-social-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-left: -2rem;
+}
+.pizza-image-ref {
+  position: relative;
+  z-index: 2;
+  width: 95%;
+  max-width: 700px;
+  margin-left: -1rem;
+}
+.pizza-image-ref img {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+}
+.social-bar-flush {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  min-width: 40px;
+  position: relative;
+  z-index: 10;
+  border-radius: 18px;
+  padding: 0.5rem 0.2rem;
+}
+.social-icons-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 0;
+}
+.social-icon {
+  width: 38px;
+  height: 38px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  font-size: 1.35rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  margin-bottom: 0.1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.social-icon:hover {
+  background: #f9a825;
+  color: #fff;
+}
+.follow-label-flush {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.9rem;
+  color: #222;
+  margin-top: 0.7rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.slogan-order-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+  min-height: 350px;
+}
+.italian-slogan-ref {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #111;
+  text-align: right;
+  margin: 3.5rem 0 0.5rem 0;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  z-index: 2;
+  position: relative;
+  word-break: keep-all;
+}
+.order-button-ref {
+  position: relative;
+  margin-top: 3rem;
+  padding: 16px 32px !important;
+  font-size: 1.4rem !important;
+  text-transform: none !important;
+  background-color: #111 !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
+  border-radius: 8px !important;
+  z-index: 10;
+  transition: all 0.2s ease-in-out !important;
+
+}
+.order-button-ref:hover {
+  background-color: #f9a825 !important;
+  transform: scale(1.05) !important;
+}
+.order-button-ref .MuiButton-endIcon {
+  margin-left: 8px;
+}
+.arrow-icon-ref {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.ratings-section-ref.ratings-section-pixel {
+  margin-top: 2.5rem;
+  background: #fff;
+  border-radius: 18px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  min-width: 380px;
+  max-width: 450px;
+  align-self: flex-end;
+  position: relative;
+  z-index: 10;
+}
+.rating-header-ref {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.rating-count {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.rating-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+.rating-score {
+  display: flex;
+  align-items: center;
+}
+.rating-star {
+  color: #ffc107;
+  margin-right: 0.25rem;
+}
+.description-text {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .main-content-ref { flex-direction: column; align-items: center; }
+  .right-col, .left-col { align-items: center; width: 100%; }
+  .slogan-order-wrapper, .italian-slogan-ref { text-align: center; align-items: center; }
+  .order-button-ref { position: static; margin: 2rem auto 0 auto; transform: none; }
+  .pizza-social-wrapper { flex-direction: column; align-items: center; margin-left: 0; }
+  .social-bar-flush { flex-direction: row; margin: 1rem 0; padding: 0.2rem 0.5rem; }
+  .follow-label-flush { writing-mode: horizontal-tb; transform: none; margin-top: 0; margin-left: 1rem; }
+  .ratings-section-ref.ratings-section-pixel { align-self: center; }
+}
+
+/* Menu Section Styles */
+.menu-section-bg {
+  background: #fdf6ef;
+  border-radius: 2rem;
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  margin: 4rem auto 0 auto;
+  max-width: 1200px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  position: relative;
+}
+.menu-section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 2.5rem;
+}
+.menu-cards-row {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.menu-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 260px;
+  max-width: 300px;
+  transition: box-shadow 0.2s;
+}
+.menu-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+.menu-card-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+  background: #f9f9f9;
+}
+.menu-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+.menu-card-info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 1.2rem;
+}
+.menu-card-rating {
+  color: #f9a825;
+  font-weight: 600;
+}
+.menu-card-btn {
+  background: #f9a825 !important;
+  color: #222 !important;
+  font-weight: 600 !important;
+  border-radius: 2rem !important;
+  text-transform: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  padding: 0.5rem 2.2rem !important;
+  font-size: 1rem !important;
+}
+.menu-card-btn:hover {
+  background: #111 !important;
+  color: #fff !important;
+}
+.menu-card-dot {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.toppings-img-ref {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  background: #fff;
+  margin-left: 0.5rem;
+}
+
+.toppings-floating-container {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 580px;
+  height: 700px;
+  pointer-events: none;
+  z-index: 3;
+}
+.topping-float {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  object-fit: contain;
+  opacity: 0.98;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.18));
+  transition: opacity 0.2s;
+}
+.topping-float-1 {
+  top: 40px;
+
+}
