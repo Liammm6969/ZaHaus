@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/LandingPage.css';
+import '../styles/MenuPage.css';
 import { Button } from '@mui/material';
-import margherita from '/src/pictures/margherita.jpg';
-import pepperoni from '/src/pictures/pepperoni.jpg';
-import hawaiian from '/src/pictures/hawaiian.jpg';
+import margherita from '../pictures/margherita.jpg';
+import pepperoni from '../pictures/pepperoni.jpg';
+import hawaiian from '../pictures/hawaiian.jpg';
 
 const dishes = [
   {
@@ -31,7 +31,7 @@ const dishes = [
 
 function MenuPage() {
   return (
-    <div className="menu-section-bg">
+    <div className="menu-section-bg menu-section-bg-with-toppings">
       <h2 className="menu-section-title">Our Popular Dishes</h2>
       <div className="menu-cards-row">
         {dishes.map((dish, idx) => (

@@ -2,12 +2,14 @@ import React from 'react';
 import '../styles/LandingPage.css';
 import pizza from '../pictures/landingpage.png'
 import toppings from '../pictures/toppings.png';
+import grid from '../pictures/grid.png';
 import { Instagram, Facebook, Twitter, Star, ExternalLink, Github } from 'lucide-react';
 import { Button } from '@mui/material';
 
 function LandingPage() {
   return (
     <div className="landing-container">
+      <img src={grid} alt="Grid" className="grid-bg-element" />
       {/* Navigation Bar */}
       <header className="navbar">
         <div className="logo-container">
@@ -92,7 +94,7 @@ function LandingPage() {
               </div>
             </div>
             <p className="description-text">
-              Our pizzas are made with fresh, high-quality ingredients and cooked to perfection. Design by Fluttertop. Enjoy a tasty and healthy meal with every bite.
+              Our pizzas are made with fresh, high-quality ingredients and cooked to perfection. Enjoy a tasty and healthy meal with every bite.
             </p>
           </div>
         </div>

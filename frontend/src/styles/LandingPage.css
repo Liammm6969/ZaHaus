@@ -397,3 +397,17 @@
   top: 40px;
 
 }
+
+.grid-bg-element {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  width: 1000px;      /* Adjust as needed */
+  height: 700px;   
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
