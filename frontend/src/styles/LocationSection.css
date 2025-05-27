@@ -1,0 +1,79 @@
+.location-page {
+  background: #f8fafc;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.location-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 48px 60px 28px 60px;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.location-title {
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #232323;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.location-description {
+  max-width: 520px;
+  font-size: 1.08rem;
+  color: #555;
+  line-height: 1.7;
+  margin-left: 48px;
+}
+
+.location-map-row {
+  width: 100%;
+  background: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.location-leaflet-map {
+  width: 100%;
+  max-width: 2000px;
+  height: 440px;
+  margin: 0 auto;
+  border-radius: 0;
+  z-index: 1;
+}
+
+.location-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fff;
+  padding: 38px 60px 32px 60px;
+  gap: 32px;
+}
+
+.location-info-col {
+  flex: 1;
+  min-width: 180px;
+}
+
+.location-info-label {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.location-info-value {
+  font-size: 1.08rem;
+  color: #444;
+  line-height: 1.7;
+}

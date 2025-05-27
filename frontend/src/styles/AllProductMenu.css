@@ -1,0 +1,141 @@
+.all-product-menu-container {
+  background: #f7f7f7;
+  min-height: 100vh;
+  padding: 32px 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.all-product-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 64px 24px 64px;
+}
+
+.all-product-menu-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.all-product-menu-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.filter-btn {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-select {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1rem;
+}
+
+.all-product-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin: 0 64px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.product-img-container {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  padding: 24px;
+}
+
+.product-img-container img {
+  max-width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.product-info {
+  background: #ededed;
+  padding: 18px 18px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.product-category {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.product-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.add-cart-btn, .buy-now-btn {
+  flex: 1;
+  padding: 7px 0;
+  border: none;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.add-cart-btn {
+  background: #fff;
+  color: #222;
+  border: 1px solid #bdbdbd;
+}
+
+.add-cart-btn:hover {
+  background: #e0e0e0;
+}
+
+.buy-now-btn {
+  background: #222;
+  color: #fff;
+}
+
+.buy-now-btn:hover {
+  background: #444;
+}

@@ -5,40 +5,42 @@ import toppings from '../pictures/toppings.png';
 import grid from '../pictures/grid.png';
 import { Instagram, Facebook, Twitter, Star, ExternalLink, Github } from 'lucide-react';
 import { Button } from '@mui/material';
+import '../styles/MenuPage.css';
+import margherita from '../pictures/margherita.jpg';
+import pepperoni from '../pictures/pepperoni.jpg';
+import hawaiian from '../pictures/hawaiian.jpg';
+import featuredPizza from '../pictures/featuredPizza.png';
+import Navbar from './Navbar';
 
+const dishes = [
+  {
+    name: 'Margherita Pizza',
+    img: margherita,
+    cal: '214 Cal',
+    rating: '4.9',
+    reviews: '5.8k',
+  },
+  {
+    name: 'Pepperoni Pizza',
+    img: pepperoni,
+    cal: '214 Cal',
+    rating: '4.8',
+    reviews: '4.2k',
+  },
+  {
+    name: 'Hawaiian Pizza',
+    img: hawaiian,
+    cal: '214 Cal',
+    rating: '4.7',
+    reviews: '3.5k',
+  },
+];
 function LandingPage() {
   return (
     <div className="landing-container">
       <img src={grid} alt="Grid" className="grid-bg-element" />
       {/* Navigation Bar */}
-      <header className="navbar">
-        <div className="logo-container">
-          <div className="logo-circle"></div>
-          <span className="logo-text">Crave</span>
-        </div>
-        
-        <nav className="nav-links">
-          <a href="#" className="nav-link active">Home</a>
-          <a href="#" className="nav-link">Menu</a>
-          <a href="#" className="nav-link">About us</a>
-          <a href="#" className="nav-link">Reservation</a>
-          <a href="#" className="nav-link">Blog</a>
-        </nav>
-        
-        <div className="nav-actions">
-          <button className="icon-btn search-btn">
-            {/* You can use Lucide's Search icon here if desired */}
-          </button>
-          <button className="icon-btn account-btn">
-            {/* You can use Lucide's User icon here if desired */}
-          </button>
-          <button className="cart-btn">
-            {/* You can use Lucide's ShoppingCart icon here if desired */}
-            <span className="cart-badge">3</span>
-          </button>
-          
-        </div>
-      </header>
+      <Navbar />
 
       {/* Main Content */}
       <div className="main-content-ref">
@@ -71,6 +73,7 @@ function LandingPage() {
               color="primary"
               className="order-button-ref"
               endIcon={<ExternalLink />}
+              onClick={() => window.location.href = '/products'}
             >
               Order now
             </Button>
@@ -99,7 +102,49 @@ function LandingPage() {
           </div>
         </div>
       </div>
+
+       {/* Ice Cream Cookie Promo Section */}
+      <div className="icecream-cookie-section">
+        <div className="icecream-cookie-content">
+          <h2 className="icecream-cookie-title">
+            Our customer's pizza<br />Pepperoni Pizza
+          </h2>
+          <div className="icecream-cookie-quote">
+            <span>”</span>
+          </div>
+        </div>
+        <div className="icecream-cookie-img-wrapper">
+          <img
+            src={featuredPizza}
+            alt="Double Ice-cream deluxe cookie"
+            className="icecream-cookie-img"
+          />
+        </div>
+      </div>
+
+      {/* Popular Dishes Section */}
+      <div className="menu-section-bg menu-section-bg-with-toppings">
+            <h2 className="menu-section-title">Our Popular Dishes</h2>
+            <div className="menu-cards-row">
+              {dishes.map((dish, idx) => (
+                <div className="menu-card" key={idx}>
+                  <img className="menu-card-img" src={dish.img} alt={dish.name} />
+                  <div className="menu-card-title">{dish.name}</div>
+                  <div className="menu-card-info-row">
+                    <span className="menu-card-cal">{dish.cal}</span>
+                    <span className="menu-card-dot">•</span>
+                    <span className="menu-card-rating">{dish.rating}★</span>
+                    <span className="menu-card-dot">•</span>
+                    <span className="menu-card-reviews">{dish.reviews} Reviews</span>
+                  </div>
+                  <Button variant="contained" className="menu-card-btn">Order Now</Button>
+                </div>
+              ))}
+            </div>
+          </div>
     </div>
+
+    
   );
 }
 

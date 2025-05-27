@@ -5,84 +5,6 @@
   position: relative;
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1400px;
-  margin: 0 auto 4rem auto;
-  padding: 0 2rem;
-}
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.logo-circle {
-  width: 32px;
-  height: 32px;
-  background: #f9a825;
-  border-radius: 50%;
-}
-.logo-text {
-  font-weight: 600;
-  font-size: 1.125rem;
-}
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-}
-.nav-link {
-  text-decoration: none;
-  color: #666;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-.nav-link.active,
-.nav-link:hover {
-  color: #f9a825;
-}
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.icon-btn,
-.cart-btn {
-  background: none;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.icon-btn:hover {
-  background: rgba(0,0,0,0.05);
-}
-.cart-btn {
-  background: #f9a825;
-  color: #fff;
-  position: relative;
-}
-.cart-badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background: #000;
-  color: #fff;
-  font-size: 0.75rem;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .main-content-ref {
   display: flex;
   flex-direction: row;
@@ -400,7 +322,7 @@
 
 .grid-bg-element {
   position: absolute;
-  top: 40%;
+  top: 17%;
   left: 45%;
   width: 1000px;      /* Adjust as needed */
   height: 700px;   
@@ -410,4 +332,89 @@
   pointer-events: none;
   opacity: 0.3;
 }
+/* Add/replace in: d:\Codingss\MERN\IPT-FinalProject\frontend\src\styles\LandingPage.css */
 
+.icecream-cookie-section {
+  width: 100%;
+  background: #f8f5f1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 48px 0 32px 0;
+  margin-top: 9.5rem;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
+}
+
+.icecream-cookie-content {
+  position: absolute;
+  left: 50%;
+  top: 27%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  pointer-events: none; 
+}
+
+.icecream-cookie-title {
+  font-family: 'Quicksand', 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-size: 8.2rem;
+  font-weight: 500;
+  color: #7a4a1d;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  margin: 0;
+  white-space: pre-line;
+  opacity: 0.93;
+  text-shadow: 0 2px 12px #fff, 0 1px 1px #fff;
+}
+
+.icecream-cookie-quote {
+  display: inline-block;
+  background: #fff;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  left: 63%;
+  top: 62%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.icecream-cookie-quote span {
+  font-size: 2.2rem;
+  color: #a97c50;
+  font-family: serif;
+  font-weight: bold;
+}
+
+.icecream-cookie-img-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 38vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.icecream-cookie-img {
+  width: 100%;
+  max-width: 1320px;
+  border-radius: 0 0 32px 32px;
+  object-fit: cover;
+  margin-bottom: -12px;
+  position: relative;
+  z-index: 3;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
