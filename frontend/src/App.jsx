@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -6,16 +5,44 @@ import './App.css'
 import LandingPage from './pages/LandingPage'
 import AllProductMenu from './pages/AllProductMenu'
 import LocationSection from './pages/LocationSection'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import ProtectedRoute from './components/ProtectedRoute'
+import Checkout from './pages/Checkout'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <Router>
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/" element={<LandingPage />} />
-        <Route path="/products" element={<AllProductMenu />} />
-        <Route path="/location" element={<LocationSection />} />
+        
+        {/* Protected Routes */}
+        <Route 
+          path="/products" 
+          element={
+            <ProtectedRoute allowedRoles={['admin', 'staff', 'customer']}>
+              <AllProductMenu />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/location" 
+          element={
+            <ProtectedRoute allowedRoles={['admin', 'staff', 'customer']}>
+              <LocationSection />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/checkout" 
+          element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          } 
+        />
       </Routes>
     </Router>
   )

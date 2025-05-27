@@ -4,6 +4,7 @@
   background: #fff;
   position: relative;
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 2.5rem;
 }
 .main-content-ref {
   display: flex;
@@ -40,6 +41,7 @@
   position: relative;
   width: 100%;
   margin-left: -2rem;
+  margin-top: 6.5rem;
 }
 .pizza-image-ref {
   position: relative;
@@ -109,6 +111,7 @@
   margin-bottom: 2.5rem;
   justify-content: center;
   min-height: 350px;
+  margin-top: 5.5rem;
 }
 .italian-slogan-ref {
   font-family: 'Playfair Display', serif;
@@ -322,8 +325,8 @@
 
 .grid-bg-element {
   position: absolute;
-  top: 17%;
-  left: 45%;
+  top: 15%;
+  left:45%;
   width: 1000px;      /* Adjust as needed */
   height: 700px;   
   object-fit: contain;
@@ -417,4 +420,97 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.menu-section-bg-with-toppings {
+  background-image: url('../pictures/toppings2.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 600px;
+  background-color: #fdf6ef;
+  border-radius: 1.2rem;    
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+
+.menu-section-title {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.menu-cards-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 20px 20px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 300px;
+  margin-left: 2.2rem;
+  transition: box-shadow 0.2s;
+}
+
+.menu-card-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.7rem;
+  background: #f9f9f9;
+}
+
+.menu-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.menu-card-info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.7rem;
+}
+
+.menu-card-rating {
+  color: #f9a825;
+  font-weight: 600;
+}
+
+.menu-card-btn {
+  background: #f9a825 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 1.2rem !important;
+  text-transform: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+  padding: 0.3rem 1.2rem !important;
+  font-size: 0.95rem !important;
+  margin-top: 0.3rem;
+}
+
+.menu-card-btn:hover {
+  background: #111 !important;
+  color: #fff !important;
+}
+
+.menu-card-dot {
+  font-size: 1rem;
+  color: #ccc;
 }

@@ -5,7 +5,6 @@ import toppings from '../pictures/toppings.png';
 import grid from '../pictures/grid.png';
 import { Instagram, Facebook, Twitter, Star, ExternalLink, Github } from 'lucide-react';
 import { Button } from '@mui/material';
-import '../styles/MenuPage.css';
 import margherita from '../pictures/margherita.jpg';
 import pepperoni from '../pictures/pepperoni.jpg';
 import hawaiian from '../pictures/hawaiian.jpg';

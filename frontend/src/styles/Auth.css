@@ -1,0 +1,141 @@
+.auth-container {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../pictures/grid.png') center/cover;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.auth-box {
+  background: #fff;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}   
+
+.auth-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.auth-title {
+  font-family: 'Playfair Display', serif !important;
+  color: #222 !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  text-align: center;
+  margin-bottom: 2rem !important;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-textfield {
+  background-color: #f8f9fa !important;
+  border-radius: 12px !important;
+}
+
+.auth-textfield .MuiOutlinedInput-root {
+  border-radius: 12px !important;
+}
+
+.auth-textfield .MuiOutlinedInput-notchedOutline {
+  border-color: #e0e0e0 !important;
+}
+
+.auth-textfield:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #f9a825 !important;
+}
+
+.auth-textfield.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #f9a825 !important;
+  border-width: 2px !important;
+}
+
+.auth-button {
+  background-color: #f9a825 !important;
+  color: #fff !important;
+  padding: 12px !important;
+  border-radius: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-transform: none !important;
+  margin-top: 1.5rem !important;
+  transition: all 0.2s !important;
+}
+
+.auth-button:hover {
+  background-color: #f57c00 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(249, 168, 37, 0.2);
+}
+
+.auth-link {
+  color: #f9a825 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: all 0.2s !important;
+}
+
+.auth-link:hover {
+  color: #f57c00 !important;
+  text-decoration: underline !important;
+}
+
+.auth-alert {
+  border-radius: 12px !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: #666;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.auth-divider span {
+  padding: 0 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  color: #666;
+} 
