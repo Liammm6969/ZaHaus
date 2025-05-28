@@ -50,6 +50,34 @@ const AllProductMenu = () => {
 
   const isAdmin = localStorage.getItem('userRole') === 'admin';
 
+  // Add default menu items at the top of the component
+  const defaultMenuItems = [
+    {
+      _id: 'default-1',
+      name: 'Margherita',
+      description: 'Classic pizza with tomato sauce, mozzarella, and basil.',
+      price: 8.99,
+      photo: '/src/pictures/margherita.jpg',
+      stock: 10
+    },
+    {
+      _id: 'default-2',
+      name: 'Pepperoni',
+      description: 'Pepperoni, mozzarella, and tomato sauce.',
+      price: 10.99,
+      photo: '/src/pictures/pepperoni.jpg',
+      stock: 8
+    },
+    {
+      _id: 'default-3',
+      name: 'Hawaiian',
+      description: 'Ham, pineapple, mozzarella, and tomato sauce.',
+      price: 11.99,
+      photo: '/src/pictures/hawaiian.jpg',
+      stock: 5
+    }
+  ];
+
   useEffect(() => {
     loadMenuItems();
   }, []);
@@ -180,7 +208,7 @@ const AllProductMenu = () => {
       showSnackbar('Stock updated successfully');
     } catch (err) {
       setError(err.message);
-      showSnackbar(err.message, 'error');
+      showSnackbar
     }
   };
 
@@ -252,20 +280,13 @@ const AllProductMenu = () => {
             Discover our handcrafted pizzas made with fresh ingredients and baked to perfection. 
             Each pizza tells a story of flavor and tradition.
           </p>
+          <div className="menu-header-line"></div>
         </div>
         {isAdmin && (
-          <IconButton
-            color="primary"
-            onClick={() => handleOpen()}
-            sx={{ 
-              width: '60px', 
-              height: '60px', 
-              background: '#f9a825',
-              '&:hover': { background: '#f57c00' }
-            }}
-          >
-            <AddIcon sx={{ color: '#fff', fontSize: '2rem' }} />
-          </IconButton>
+          <div className="menu-add-btn" onClick={() => handleOpen()}>
+            <AddIcon />
+            <span className="menu-add-btn-label">Add Menu</span>
+          </div>
         )}
       </div>
 
@@ -276,7 +297,7 @@ const AllProductMenu = () => {
       )}
 
       <div className="menu-grid">
-        {menuItems.map((item) => (
+        {[...defaultMenuItems, ...menuItems].map((item) => (
           <div key={item._id} className="menu-item-card">
             <img
               className="menu-item-image"
@@ -284,18 +305,37 @@ const AllProductMenu = () => {
               alt={item.name}
             />
             <div className="menu-item-content">
-              {isAdmin && (
+              {/* Only show admin actions if not a default item */}
+              {isAdmin && !item._id.startsWith('default-') && (
                 <div className="admin-actions">
-                  <IconButton onClick={() => handleOpen(item)} size="small">
-                    <EditIcon />
-                  </IconButton>
-                  <IconButton onClick={() => handleDelete(item._id)} size="small">
-                    <DeleteIcon />
-                  </IconButton>
-                  <IconButton onClick={() => handleOpenStockDialog(item)} size="small">
-                    <InventoryIcon />
-                  </IconButton>
+                  <span className="admin-action-btn-wrapper">
+                    <IconButton onClick={() => handleOpen(item)} size="small">
+                      <EditIcon />
+                    </IconButton>
+                    <span className="admin-action-tooltip">Edit</span>
+                  </span>
+                  <span className="admin-action-btn-wrapper">
+                    <IconButton onClick={() => handleDelete(item._id)} size="small">
+                      <DeleteIcon />
+                    </IconButton>
+                    <span className="admin-action-tooltip">Delete</span>
+                  </span>
                 </div>
+              )}
+              
+              {/* Edit Stock button for admin, only for real items */}
+              {isAdmin && !item._id.startsWith('default-') && (
+                <span className="admin-action-btn-wrapper">
+                  <Button
+                    variant="outlined"
+                    size="small"
+                    startIcon={<InventoryIcon />}
+                    onClick={() => handleOpenStockDialog(item)}
+                    sx={{ mt: 1, mb: 1 }}
+                  >
+                    Edit Stock
+                  </Button>
+                </span>
               )}
               
               <div className="menu-item-header">
@@ -319,6 +359,8 @@ const AllProductMenu = () => {
                   startIcon={<ShoppingCartIcon />}
                   onClick={() => handleAddToCart(item)}
                   disabled={item.stock === 0}
+                  onMouseEnter={e => e.currentTarget.setAttribute('data-tooltip', 'Add to Cart')}
+                  onMouseLeave={e => e.currentTarget.removeAttribute('data-tooltip')}
                 >
                   Add to Cart
                 </Button>
@@ -327,6 +369,8 @@ const AllProductMenu = () => {
                   className="buy-now-btn"
                   onClick={() => handleBuyNow(item)}
                   disabled={item.stock === 0}
+                  onMouseEnter={e => e.currentTarget.setAttribute('data-tooltip', 'Buy Now')}
+                  onMouseLeave={e => e.currentTarget.removeAttribute('data-tooltip')}
                 >
                   Buy Now
                 </Button>

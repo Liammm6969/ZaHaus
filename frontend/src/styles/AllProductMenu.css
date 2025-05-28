@@ -26,6 +26,10 @@
   margin-bottom: 3rem;
   position: relative;
   z-index: 2;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 1.2rem;
 }
 
 .menu-title {
@@ -35,6 +39,7 @@
   color: #111;
   margin: 0;
   line-height: 1.1;
+  text-align: center;
 }
 
 .menu-description {
@@ -43,6 +48,18 @@
   color: #555;
   line-height: 1.7;
   margin-top: 1rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-header-line {
+  width: 80px;
+  height: 3px;
+  background: #f9a825;
+  border-radius: 2px;
+  margin: 1.2rem auto 0 auto;
+  opacity: 0.8;
 }
 
 .menu-grid {
@@ -263,6 +280,95 @@
 .MuiAlert-action {
   margin-right: -8px !important;
   padding-left: 16px !important;
+}
+
+/* Add hover effect to expand add button and show label */
+.menu-add-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #f9a825;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s cubic-bezier(.4,0,.2,1), background 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.menu-add-btn:hover {
+  width: 170px;
+  background: #f9a825;
+  border-radius: 32px;
+}
+.menu-add-btn-label {
+  opacity: 0;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-left: 16px;
+  transition: opacity 0.2s 0.1s;
+  pointer-events: none;
+}
+.menu-add-btn:hover .menu-add-btn-label {
+  opacity: 1;
+}
+.menu-add-btn .MuiSvgIcon-root {
+  font-size: 2rem;
+  color: #fff;
+  transition: color 0.2s;
+}
+
+/* Tooltip for admin action buttons */
+.admin-action-tooltip {
+  position: absolute;
+  left: 50%;
+  top: -36px;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 4px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.admin-action-btn-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.admin-action-btn-wrapper:hover .admin-action-tooltip {
+  opacity: 1;
+}
+
+/* Tooltip for main action buttons (Add to Cart, Buy Now) */
+.add-to-cart-btn[data-tooltip]:hover::after,
+.buy-now-btn[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  top: -38px;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 4px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.add-to-cart-btn,
+.buy-now-btn {
+  position: relative;
 }
 
 @media (max-width: 1200px) {

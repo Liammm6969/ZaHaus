@@ -136,7 +136,6 @@ function LandingPage() {
                     <span className="menu-card-dot">•</span>
                     <span className="menu-card-reviews">{dish.reviews} Reviews</span>
                   </div>
-                  <Button variant="contained" className="menu-card-btn">Order Now</Button>
                 </div>
               ))}
             </div>
