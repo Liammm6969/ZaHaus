@@ -28,6 +28,7 @@ function Navbar() {
   const navigate = useNavigate();
   const username = localStorage.getItem('username');
   const [cartItemCount, setCartItemCount] = useState(0);
+  const [userRole, setUserRole] = useState(localStorage.getItem('userRole'));
 
   useEffect(() => {
     const updateCartCount = () => {
@@ -35,14 +36,20 @@ function Navbar() {
       const count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
       setCartItemCount(count);
     };
+    const updateUserRole = () => {
+      setUserRole(localStorage.getItem('userRole'));
+    };
 
     updateCartCount();
+    updateUserRole();
     window.addEventListener('storage', updateCartCount);
     window.addEventListener('cartUpdated', updateCartCount);
+    window.addEventListener('storage', updateUserRole);
 
     return () => {
       window.removeEventListener('storage', updateCartCount);
       window.removeEventListener('cartUpdated', updateCartCount);
+      window.removeEventListener('storage', updateUserRole);
     };
   }, []);
 
@@ -137,6 +144,15 @@ function Navbar() {
           </Box>
 
           <Box className="user-menu">
+            {username && userRole === 'admin' && (
+              <Button
+                color="inherit"
+                onClick={() => navigate('/admin/users')}
+                className="admin-users-button"
+              >
+                Users
+              </Button>
+            )}
             {username && (
               <IconButton 
                 color="inherit" 

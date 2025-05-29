@@ -4,7 +4,6 @@
   background: #fff;
   position: relative;
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 2.5rem;
 }
 .main-content-ref {
   display: flex;
@@ -41,7 +40,7 @@
   position: relative;
   width: 100%;
   margin-left: -2rem;
-  margin-top: 6.5rem;
+  margin-top: 3.5rem;
 }
 .pizza-image-ref {
   position: relative;
@@ -111,7 +110,7 @@
   margin-bottom: 2.5rem;
   justify-content: center;
   min-height: 350px;
-  margin-top: 5.5rem;
+  margin-top: 2.5rem;
 }
 .italian-slogan-ref {
   font-family: 'Playfair Display', serif;
@@ -131,9 +130,12 @@
   margin-top: 3rem;
   padding: 16px 32px !important;
   font-size: 1.4rem !important;
+  color: white !important;  
   text-transform: none !important;
-  background-color: #111 !important;
+  background-color: #f9a82585 !important;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18) !important;
+  border: #111 .5px solid !important;
+  font-weight: 600 !important;
   border-radius: 8px !important;
   z-index: 10;
   transition: all 0.2s ease-in-out !important;
@@ -325,9 +327,9 @@
 
 .grid-bg-element {
   position: absolute;
-  top: 15%;
+  top: 10%;
   left:45%;
-  width: 1000px;      /* Adjust as needed */
+  width: 1000px;      
   height: 700px;   
   object-fit: contain;
   transform: translate(-50%, -50%);
@@ -335,9 +337,8 @@
   pointer-events: none;
   opacity: 0.3;
 }
-/* Add/replace in: d:\Codingss\MERN\IPT-FinalProject\frontend\src\styles\LandingPage.css */
 
-.icecream-cookie-section {
+.pizza-cookie-section {
   width: 100%;
   background: #f8f5f1;
   display: flex;
@@ -351,7 +352,7 @@
   min-height: 350px;
 }
 
-.icecream-cookie-content {
+.pizza-cookie-content {
   position: absolute;
   left: 50%;
   top: 27%;
@@ -362,7 +363,7 @@
   pointer-events: none; 
 }
 
-.icecream-cookie-title {
+.pizza-cookie-title {
   font-family: 'Quicksand', 'Poppins', 'Segoe UI', Arial, sans-serif;
   font-size: 8.2rem;
   font-weight: 500;
@@ -375,7 +376,7 @@
   text-shadow: 0 2px 12px #fff, 0 1px 1px #fff;
 }
 
-.icecream-cookie-quote {
+.pizza-cookie-quote {
   display: inline-block;
   background: #fff;
   border-radius: 50%;
@@ -393,14 +394,14 @@
   pointer-events: auto;
 }
 
-.icecream-cookie-quote span {
+.pizza-cookie-quote span {
   font-size: 2.2rem;
   color: #a97c50;
   font-family: serif;
   font-weight: bold;
 }
 
-.icecream-cookie-img-wrapper {
+.pizza-cookie-img-wrapper {
   position: relative;
   z-index: 2;
   width: 38vw;
@@ -409,7 +410,7 @@
   justify-content: flex-start;
 }
 
-.icecream-cookie-img {
+.pizza-cookie-img {
   width: 100%;
   max-width: 1320px;
   border-radius: 0 0 32px 32px;
@@ -421,7 +422,281 @@
   margin-left: auto;
   margin-right: auto;
 }
+.about-us-section {
+  max-width: 1400px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  position: relative;
+}
 
+.about-us-container {
+  width: 100%;
+}
+
+.about-us-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-us-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.about-us-subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.about-us-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.about-us-text {
+  padding-right: 1rem;
+}
+
+.about-us-story-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-us-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-us-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.about-stat {
+  text-align: center;
+  min-width: 120px;
+}
+
+.about-stat-icon {
+  background: #f9a825;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.5rem auto;
+  transition: transform 0.3s ease;
+}
+
+.about-stat-icon:hover {
+  transform: scale(1.1);
+}
+
+.about-stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 0.25rem 0;
+}
+
+.about-stat-label {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.about-us-image {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #f9a825 0%, #f57c00 100%);
+  height: 500px;
+  background-image: url('../pictures/ninong.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.chef-card {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.chef-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 0.5rem 0;
+}
+
+.chef-title {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.about-us-promise {
+  background: linear-gradient(135deg, #f9a825 0%, #f57c00 100%);
+  border-radius: 2rem;
+  padding: 3rem;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.promise-bg-decoration {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+
+.promise-decoration-1 {
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+}
+
+.promise-decoration-2 {
+  bottom: -30px;
+  left: -30px;
+  width: 150px;
+  height: 150px;
+}
+
+.promise-content {
+  position: relative;
+  z-index: 1;
+}
+
+.promise-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.promise-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  opacity: 0.95;
+}
+
+.promise-features {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.promise-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Responsive Design for About Us Section */
+@media (max-width: 1200px) {
+  .about-us-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .about-us-text {
+    padding-right: 0;
+  }
+  
+  .about-us-stats {
+    justify-content: center;
+  }
+  
+  .about-us-image {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us-section {
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+  
+  .about-us-title {
+    font-size: 2.5rem;
+  }
+  
+  .about-us-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .about-us-story-title {
+    font-size: 1.8rem;
+  }
+  
+  .about-us-description {
+    font-size: 1rem;
+  }
+  
+  .about-us-stats {
+    gap: 1.5rem;
+  }
+  
+  .about-us-promise {
+    padding: 2rem;
+  }
+  
+  .promise-title {
+    font-size: 2rem;
+  }
+  
+  .promise-description {
+    font-size: 1.1rem;
+  }
+  
+  .promise-features {
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-us-image {
+    height: 400px;
+  }
+}
 .menu-section-bg-with-toppings {
   background-image: url('../pictures/toppings2.png');
   background-repeat: no-repeat;
@@ -513,4 +788,200 @@
 .menu-card-dot {
   font-size: 1rem;
   color: #ccc;
+}
+
+/* Footer Styles */
+.footer-section {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #fff;
+  padding: 4rem 0 2rem 0;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #f9a825;
+  margin-bottom: 0.5rem;
+}
+
+.footer-description {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 1rem;
+  max-width: 300px;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-social-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(249, 168, 37, 0.1);
+  border: 1px solid rgba(249, 168, 37, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9a825;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social-icon:hover {
+  background: #f9a825;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #f9a825;
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.footer-contact-icon {
+  color: #f9a825;
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-bottom-link {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom-link:hover {
+  color: #f9a825;
+}
+
+/* Responsive Footer */
+@media (max-width: 1200px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 3rem 0 1.5rem 0;
+  }
+  
+  .footer-container {
+    padding: 0 1rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-description {
+    max-width: none;
+  }
+  
+  .footer-social-links {
+    justify-content: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-bottom-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-bottom-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

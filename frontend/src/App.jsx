@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import ProtectedRoute from './components/ProtectedRoute'
 import Checkout from './pages/Checkout'
+import UserManagementPage from './pages/UserManagementPage'
 
 function App() {
   return (
@@ -40,6 +41,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Checkout />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/admin/users" 
+          element={
+            <ProtectedRoute allowedRoles={['admin']}>
+              <UserManagementPage />
             </ProtectedRoute>
           } 
         />

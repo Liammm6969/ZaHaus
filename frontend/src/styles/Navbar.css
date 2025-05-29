@@ -138,3 +138,7 @@
     display: flex !important;
   }
 }
+.admin-users-button{
+  color: black !important;
+  border: 1px solid #d1d5db !important;
+}

@@ -23,6 +23,7 @@ import { Add as AddIcon, Remove as RemoveIcon, Delete as DeleteIcon } from '@mui
 import { useNavigate } from 'react-router-dom';
 import { createOrder } from '../services/orderService';
 import Navbar from './Navbar';
+import '../styles/CheckoutPage.css';
 
 const Checkout = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -153,9 +154,9 @@ const Checkout = () => {
   }
 
   return (
-    <Container sx={{ py: 4 }}>
+    <Container className="checkout-container" sx={{ py: 4 }}>
       <Navbar />
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Typography variant="h4" component="h1" gutterBottom className="checkout-header">
         Checkout
       </Typography>
 
@@ -166,7 +167,7 @@ const Checkout = () => {
       )}
 
       {cartItems.length === 0 ? (
-        <Typography variant="h6" sx={{ textAlign: 'center', my: 4 }}>
+        <Typography variant="h6" className="checkout-empty" sx={{ textAlign: 'center', my: 4 }}>
           Your cart is empty
         </Typography>
       ) : (
@@ -185,7 +186,7 @@ const Checkout = () => {
               />
             </Box>
             {cartItems.map((item) => (
-              <Card key={item._id} sx={{ mb: 2 }}>
+              <Card key={item._id} className="checkout-card" sx={{ mb: 2 }}>
                 <Grid container>
                   <Grid item xs={1} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Checkbox
@@ -199,6 +200,7 @@ const Checkout = () => {
                       height="140"
                       image={item.photo}
                       alt={item.name}
+                      className="checkout-card-media"
                     />
                   </Grid>
                   <Grid item xs={8}>
@@ -214,19 +216,21 @@ const Checkout = () => {
                         <IconButton 
                           onClick={() => updateQuantity(item._id, -1)}
                           disabled={item.quantity <= 1}
+                          className="checkout-qty-btn"
                         >
                           <RemoveIcon />
                         </IconButton>
                         <Typography sx={{ mx: 2 }}>
                           {item.quantity || 1}
                         </Typography>
-                        <IconButton onClick={() => updateQuantity(item._id, 1)}>
+                        <IconButton onClick={() => updateQuantity(item._id, 1)} className="checkout-qty-btn">
                           <AddIcon />
                         </IconButton>
                         <IconButton 
                           color="error" 
                           onClick={() => removeItem(item._id)}
                           sx={{ ml: 2 }}
+                          className="checkout-remove-btn"
                         >
                           <DeleteIcon />
                         </IconButton>
@@ -238,9 +242,9 @@ const Checkout = () => {
             ))}
           </Grid>
           <Grid item xs={12} md={4}>
-            <Card>
+            <Card className="checkout-summary-card">
               <CardContent>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h6" gutterBottom className="checkout-summary-title">
                   Order Summary
                 </Typography>
                 <Box sx={{ mb: 2 }}>
@@ -259,12 +263,13 @@ const Checkout = () => {
                 </Box>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
                   <Typography variant="h6">Total</Typography>
-                  <Typography variant="h6">${calculateTotal().toFixed(2)}</Typography>
+                  <Typography variant="h6" className="checkout-summary-total">${calculateTotal().toFixed(2)}</Typography>
                 </Box>
                 <Button
                   variant="contained"
                   color="primary"
                   fullWidth
+                  className="checkout-btn"
                   onClick={() => setIsAddressDialogOpen(true)}
                   disabled={selectedItems.size === 0}
                 >
@@ -276,7 +281,7 @@ const Checkout = () => {
         </Grid>
       )}
 
-      <Dialog open={isAddressDialogOpen} onClose={() => setIsAddressDialogOpen(false)}>
+      <Dialog open={isAddressDialogOpen} onClose={() => setIsAddressDialogOpen(false)} className="checkout-dialog">
         <DialogTitle>Shipping Address</DialogTitle>
         <DialogContent>
           <TextField
@@ -306,4 +311,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout; 
+export default Checkout;
