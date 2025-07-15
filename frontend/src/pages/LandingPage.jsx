@@ -10,6 +10,7 @@ import pepperoni from '../pictures/pepperoni.jpg';
 import hawaiian from '../pictures/hawaiian.jpg';
 import featuredPizza from '../pictures/featuredPizza.png';
 import Navbar from './Navbar';
+import { motion } from 'framer-motion';
 
 const dishes = [
   {
@@ -43,13 +44,25 @@ function LandingPage() {
       <Navbar />
 
       {/* Main Content */}
-      <div className="main-content-ref">
+      <motion.div 
+        className="main-content-ref"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         {/* Left Column */}
         <div className="left-col">
           <div className="review-row">
           </div>
-          <div className="pizza-social-wrapper">
-          <div className="social-bar-flush">
+          <motion.div 
+            className="pizza-social-wrapper"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="social-bar-flush">
               <div className="social-icons-vertical">
                 <a href="https://www.instagram.com/liam2104" target='_blank' className="social-icon"><Instagram size={22} /></a>
                 <a href="https://www.facebook.com/Liam2104" target='_blank' className="social-icon"><Facebook size={22} /></a>
@@ -60,10 +73,16 @@ function LandingPage() {
             <div className="pizza-image-ref">
               <img src={pizza} alt="Delicious pizza slice" />
             </div>
-          </div>
+          </motion.div>
         </div>
         {/* Right Column */}
-        <div className="right-col">
+        <motion.div 
+          className="right-col"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="slogan-order-wrapper">
             <h1 className="italian-slogan-ref">
               Where Every Slice<br />Feels Like Home.
@@ -81,12 +100,12 @@ function LandingPage() {
               <img src={toppings} alt="Topping" className="topping-float topping-float-1" />
             </div>
           </div>
-            <div className="floating-ingredients-pixel">
-                <div className="ingredient-svg ingredient-svg-1"></div>
-                <div className="ingredient-svg ingredient-svg-2"></div>
-                <div className="ingredient-svg ingredient-svg-3"></div>
-                <div className="ingredient-svg ingredient-svg-4"></div>
-            </div>
+          <div className="floating-ingredients-pixel">
+            <div className="ingredient-svg ingredient-svg-1"></div>
+            <div className="ingredient-svg ingredient-svg-2"></div>
+            <div className="ingredient-svg ingredient-svg-3"></div>
+            <div className="ingredient-svg ingredient-svg-4"></div>
+          </div>
           <div className="ratings-section-ref ratings-section-pixel">
             <div className="rating-header-ref">
               <span className="rating-count">25k+ Rating</span>
@@ -100,11 +119,17 @@ function LandingPage() {
               Our pizzas are made with fresh, high-quality ingredients and cooked to perfection. Enjoy a tasty and healthy meal with every bite.
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-       {/* Pizza Cookie Promo Section */}
-      <div className="pizza-cookie-section">
+      {/* Pizza Cookie Promo Section */}
+      <motion.div
+        className="pizza-cookie-section"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+      >
         <div className="pizza-cookie-content">
           <h2 className="pizza-cookie-title">
             Our customer's pizza<br />Pepperoni Pizza
@@ -120,10 +145,17 @@ function LandingPage() {
             className="pizza-cookie-img"
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* About Us Section */}
-      <div className="about-us-section" id='about'>
+      <motion.div
+        className="about-us-section"
+        id='about'
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
         <div className="about-us-container">
           <div className="about-us-header">
             <h2 className="about-us-title">About Our Story</h2>
@@ -131,7 +163,6 @@ function LandingPage() {
               Crafting authentic Italian flavors with passion since 2025
             </p>
           </div>
-
           <div className="about-us-content">
             <div className="about-us-text">
               <h3 className="about-us-story-title">From Italy to Your Table</h3>
@@ -172,7 +203,6 @@ function LandingPage() {
               </div>
             </div>
           </div>
-
           <div className="about-us-promise">
             <div className="promise-bg-decoration promise-decoration-1"></div>
             <div className="promise-bg-decoration promise-decoration-2"></div>
@@ -198,27 +228,40 @@ function LandingPage() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Popular Dishes Section */}
-      <div className="menu-section-bg menu-section-bg-with-toppings">
-            <h2 className="menu-section-title">Our Popular Dishes</h2>
-            <div className="menu-cards-row">
-              {dishes.map((dish, idx) => (
-                <div className="menu-card" key={idx}>
-                  <img className="menu-card-img" src={dish.img} alt={dish.name} />
-                  <div className="menu-card-title">{dish.name}</div>
-                  <div className="menu-card-info-row">
-                    <span className="menu-card-cal">{dish.cal}</span>
-                    <span className="menu-card-dot">•</span>
-                    <span className="menu-card-rating">{dish.rating}★</span>
-                    <span className="menu-card-dot">•</span>
-                    <span className="menu-card-reviews">{dish.reviews} Reviews</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      <motion.div
+        className="menu-section-bg menu-section-bg-with-toppings"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <h2 className="menu-section-title">Our Popular Dishes</h2>
+        <div className="menu-cards-row">
+          {dishes.map((dish, idx) => (
+            <motion.div
+              className="menu-card"
+              key={idx}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.3 + idx * 0.1 }}
+            >
+              <img className="menu-card-img" src={dish.img} alt={dish.name} />
+              <div className="menu-card-title">{dish.name}</div>
+              <div className="menu-card-info-row">
+                <span className="menu-card-cal">{dish.cal}</span>
+                <span className="menu-card-dot">•</span>
+                <span className="menu-card-rating">{dish.rating}★</span>
+                <span className="menu-card-dot">•</span>
+                <span className="menu-card-reviews">{dish.reviews} Reviews</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Footer Section */}
       <footer className="footer-section">
@@ -242,7 +285,6 @@ function LandingPage() {
                 </a>
               </div>
             </div>
-
             <div className="footer-column">
               <h4 className="footer-column-title">Quick Links</h4>
               <div className="footer-links">
@@ -252,7 +294,6 @@ function LandingPage() {
                 <a href="/location" className="footer-link">Location</a>
               </div>
             </div>
-
             <div className="footer-column">
               <h4 className="footer-column-title">Customer Service</h4>
               <div className="footer-links">
@@ -263,7 +304,6 @@ function LandingPage() {
                 <a href="#" className="footer-link">Reviews</a>
               </div>
             </div>
-
             <div className="footer-column">
               <h4 className="footer-column-title">Contact Info</h4>
               <div className="footer-contact-info">
@@ -282,7 +322,6 @@ function LandingPage() {
               </div>
             </div>
           </div>
-
           <div className="footer-bottom">
             <p className="footer-copyright">
               © ZaHaus. All rights reserved.
@@ -296,8 +335,6 @@ function LandingPage() {
         </div>
       </footer>
     </div>
-
-    
   );
 }
 

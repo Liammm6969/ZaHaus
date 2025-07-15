@@ -26,6 +26,7 @@ import {
 import { getAllMenuItems, createMenuItem, updateMenuItem, deleteMenuItem, uploadPhoto, updateStock } from '../services/menuService';
 import Navbar from './Navbar';
 import '../styles/AllProductMenu.css';
+import pizza from '../pictures/landingpage.png'; // Use the same pizza image as the home page for accent
 
 const AllProductMenu = () => {
   const [menuItems, setMenuItems] = useState([]);
@@ -270,9 +271,11 @@ const AllProductMenu = () => {
   };
 
   return (
-    <div className="all-product-menu-container">
+    <div className="all-product-menu-container" style={{ position: 'relative' }}>
       <Navbar />
-      
+      {/* Decorative background accent */}
+      <div className="menu-grid-bg" />
+      <img src={pizza} alt="Pizza Accent" className="menu-floating-accent" />
       <div className="menu-header">
         <div>
           <h1 className="menu-title">Our Menu</h1>
@@ -350,6 +353,7 @@ const AllProductMenu = () => {
               </div>
               
               <p className="menu-item-description">{item.description}</p>
+              <div className="menu-item-divider"></div>
               <div className="menu-item-price">${item.price}</div>
               
               <div className="menu-item-actions">
