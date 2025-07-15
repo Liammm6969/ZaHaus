@@ -11,6 +11,7 @@ router.post('/', isAuthenticated, async (req, res) => {
     const { items, shippingAddress } = req.body;
     const username = req.headers.username;
     let totalAmount = 0;
+    const orderItems = [];
 
     // Check stock and calculate total
     for (const item of items) {
@@ -20,17 +21,19 @@ router.post('/', isAuthenticated, async (req, res) => {
           message: `Not enough stock for ${menuItem ? menuItem.name : 'item'}` 
         });
       }
-      totalAmount += menuItem.price * item.quantity;
+      const itemTotal = menuItem.price * item.quantity;
+      totalAmount += itemTotal;
+      orderItems.push({
+        menuItem: item.menuItem,
+        quantity: item.quantity,
+        price: menuItem.price
+      });
     }
 
     // Create order
     const order = await Order.create({
       user: username,
-      items: items.map(item => ({
-        menuItem: item.menuItem,
-        quantity: item.quantity,
-        price: item.price
-      })),
+      items: orderItems,
       totalAmount,
       shippingAddress
     });
@@ -45,7 +48,8 @@ router.post('/', isAuthenticated, async (req, res) => {
 
     res.status(201).json(await Order.findById(order._id).populate('items.menuItem'));
   } catch (error) {
-    res.status(500).json({ message: 'Error creating order' });
+    console.error('Order creation error:', error);
+    res.status(500).json({ message: 'Error creating order: ' + error.message });
   }
 });
 
