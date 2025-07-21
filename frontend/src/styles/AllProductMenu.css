@@ -4,7 +4,7 @@
   background: #fff;
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: relative;
-  padding-top: 80px; /* Add space for the fixed navbar */
+  padding-top: 130px; /* Add space for the fixed navbar */
 }
 
 .navbar {
