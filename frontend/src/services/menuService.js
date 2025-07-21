@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/menu';
+const API_URL = '/api/menu';
 
 export const getAllMenuItems = async () => {
   const response = await fetch(API_URL);

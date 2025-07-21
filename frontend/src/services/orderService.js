@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/orders';
+const API_URL = '/api/orders';
 
 export const createOrder = async (items, shippingAddress) => {
   const username = localStorage.getItem('username');
