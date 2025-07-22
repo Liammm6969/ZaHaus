@@ -1,4 +1,4 @@
-const API_URL = '/api/menu';
+const API_URL = import.meta.env.VITE_API_BASE_URL + '/menu';
 
 export const getAllMenuItems = async () => {
   const response = await fetch(API_URL);

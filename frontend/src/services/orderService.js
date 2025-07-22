@@ -1,4 +1,4 @@
-const API_URL = '/api/orders';
+const API_URL = import.meta.env.VITE_API_BASE_URL + '/orders';
 
 export const createOrder = async (items, shippingAddress) => {
   const username = localStorage.getItem('username');

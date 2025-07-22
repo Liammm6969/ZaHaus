@@ -1,4 +1,4 @@
-const API_URL = '/api/users';
+const API_URL = import.meta.env.VITE_API_BASE_URL + '/users';
 
 export const getAllUsers = async () => {
   const username = localStorage.getItem('username');
