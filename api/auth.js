@@ -3,7 +3,6 @@ import User from '../backend/models/User.js';
 
 export default async function handler(req, res) {
   await connectDB();
-  // Parse path for subroutes
   const { method, url } = req;
   if (method === 'POST' && url.endsWith('/signup')) {
     try {
